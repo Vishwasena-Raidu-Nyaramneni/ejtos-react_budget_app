@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+//import ExpenseTotal from './ExpenseTotal';
 
 const Budget = () => {
     const { budget,currency } = useContext(AppContext);
+    //const {totalExpenses} = useContext(ExpenseTotal);
     const [newBudget, setNewBudget] = useState(budget);
     const handleBudgetChange = (event) => {
         setNewBudget(event.target.value);

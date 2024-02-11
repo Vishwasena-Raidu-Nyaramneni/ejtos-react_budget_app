@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Remaining = () => {
-    const { expenses, budget, remaining } = useContext(AppContext);
+    const { expenses, budget, remaining,currency } = useContext(AppContext);
     const totalExpenses = expenses.reduce((total, item) => {
         return (total = total + item.cost);
     }, 0);
@@ -9,7 +9,7 @@ const Remaining = () => {
     if(remaining<0){ alert('You cannot reduce the bu') }
     return (
         <div className={`alert ${alertType}`}>
-            <span>Remaining: £{budget - totalExpenses}</span>
+            <span>Remaining: {currency}{budget - totalExpenses}</span>
         </div>
     );
 };
